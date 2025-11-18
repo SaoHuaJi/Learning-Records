@@ -11,7 +11,7 @@ year: 2025
 venue: "arXiv"
 language: "en"
 citation: |
-@misc{davidson2025collaborationgap,
+  @misc{davidson2025collaborationgap,
     title={The Collaboration Gap}, 
     author={Tim R. Davidson and Adam Fourney and Saleema Amershi and Robert West and Eric Horvitz and Ece Kamar},
     year={2025},
@@ -19,7 +19,7 @@ citation: |
     archivePrefix={arXiv},
     primaryClass={cs.AI},
     url={https://arxiv.org/abs/2511.02687}, 
-}
+  }
 
 # 自定义状态与评分（可选）
 importance: 4
@@ -112,4 +112,5 @@ recommend: 3
 - MCP
 - A2A
 - ACP
+
 
