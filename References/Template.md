@@ -22,7 +22,7 @@ recommend: 3    # 1-5 推荐再读评分
 
 ## 1. 概览 Overview
 
-### 1.1 个人总结 Personal Summary
+### 1.1 个人预览 Personal Preview
 
 > 用自己的话对文章内容进行简要总结（参考如下）
 >
@@ -33,9 +33,9 @@ recommend: 3    # 1-5 推荐再读评分
 
 ### 1.2 内容简介 Description
 
-- 研究背景 Research Background：
-- 研究目标 Research Objectives：
-- 主要贡献 Main Contributions：
+- **研究背景 Research Background：**
+- **研究目标 Research Objectives：**
+- **主要贡献 Main Contributions：**
 
 ---
 
@@ -47,8 +47,8 @@ recommend: 3    # 1-5 推荐再读评分
 
 ### 2.2 实验设置与结果 Experimental Settings & Results
 
-- 实验设置 Experimental Settings：
-- 实验结果 Experimental Results：
+- **实验设置 Experimental Settings：**
+- **实验结果 Experimental Results：**
 
 ---
 
@@ -60,9 +60,7 @@ recommend: 3    # 1-5 推荐再读评分
 
 ### 3.2 个人思考 Personal Thoughts
 
-- 文章有什么不足之处？  
-- 文章对你有什么启发？  
-- 你有什么改进的想法？
+- 文章有什么不足之处？对你有什么启发？有什么改进的想法？
 
 ---
 
