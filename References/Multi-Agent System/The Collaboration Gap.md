@@ -10,7 +10,8 @@ affiliations: ["EPFL", "Microsoft Research"]
 year: 2025
 venue: "arXiv"
 language: "en"
-citation: @misc{davidson2025collaborationgap,
+citation: |
+@misc{davidson2025collaborationgap,
     title={The Collaboration Gap}, 
     author={Tim R. Davidson and Adam Fourney and Saleema Amershi and Robert West and Eric Horvitz and Ece Kamar},
     year={2025},
@@ -111,3 +112,4 @@ recommend: 3
 - MCP
 - A2A
 - ACP
+
