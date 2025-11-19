@@ -453,7 +453,7 @@ def call_llm_with_template(
     model: str = "gpt-4.1-mini",
     *,
     template_path: Optional[str] = None,
-    language: str = "zh",
+    language: str = "中文",
     note_style: str = "normal",
     only_sections: Optional[List[str]] = None,
 ) -> str:
@@ -484,13 +484,13 @@ def call_llm_with_template(
 5. 笔记长度与详略风格：{style_instruction}
 6. 关于重点章节：{sections_instruction}
 7. 不要额外增加模板之外的章节（比如"附录""额外说明"等），也不要输出模板外的多余文本。
-    """.strip()
+""".strip()
 
     user_prompt = f"""
 下面是这篇论文的内容表示（可能是原文，也可能是分块摘要的汇总）：
 
 \"\"\"{paper_representation}\"\"\"
-    """.strip()
+""".strip()
     resp = client.chat.completions.create(
         model=model,
         messages=[
@@ -509,7 +509,7 @@ def summarize_chunk(
     client: OpenAI,
     model: str = "gpt-4.1-mini",
     *,
-    language: str = "zh",
+    language: str = "中文",
     note_style: str = "normal",
 ) -> str:
     """对单个文本块做"中间层摘要"，供后续汇总成整篇笔记使用。
@@ -575,6 +575,7 @@ def summarize_paper_hierarchical(
     language: str = "zh",
     note_style: str = "normal",
     only_sections: Optional[List[str]] = None,
+    no_chunks: bool = False,
     chunk_size: int = 12000,
     chunk_overlap: int = 800,
     direct_threshold: int = 18000,
@@ -607,8 +608,8 @@ def summarize_paper_hierarchical(
         str: 最终笔记内容
     """
     client = OpenAI(api_key=api_key, base_url=base_url)
-    # 论文不长时直接一次性按模板生成
-    if len(full_text) <= direct_threshold:
+    # 论文不长或要求不切片时时直接一次性按模板生成
+    if no_chunks or len(full_text) <= direct_threshold:
         return call_llm_with_template(
             paper_representation=full_text,
             original_uri=original_uri,
@@ -672,11 +673,12 @@ def summarize_paper(
     api_key: str,
     base_url: str,
     model: str = "gpt-4.1-mini",
-    language: str = "zh",
+    language: str = "中文",
     note_style: str = "normal",
     only_sections: Optional[List[str]] = None,
-    max_chars: int = 120_000,
-    chunk_chars: int = 12_000,
+    no_chunks: bool = True,
+    max_chars: int = 500000,
+    chunk_chars: int = 10000,
     chunk_overlap_chars: int = 800,
     timeout: int = 300,
 ) -> str:
@@ -716,7 +718,7 @@ def summarize_paper(
     # 1. 加载全文文本
     full_text = load_paper_text_from_uri(real_uri, timeout)
     # 2. 极端长度保护（按字符截断）
-    if len(full_text) > max_chars:
+    if not no_chunks and len(full_text) > max_chars:
         full_text = full_text[:max_chars]
     # 3. 分层总结（内部会根据长度自动决定是否分块）
     summary_md = summarize_paper_hierarchical(
@@ -728,6 +730,7 @@ def summarize_paper(
         language=language,
         note_style=note_style,
         only_sections=only_sections,
+        no_chunks=no_chunks,
         chunk_size=chunk_chars,
         chunk_overlap=chunk_overlap_chars,
     )
