@@ -1,10 +1,9 @@
 ---
-# 基本信息
 name: "The Collaboration Gap"
 uri: "https://arxiv.org/abs/2511.02687"
 tags: ["AI协作", "多智能体", "大型语言模型", "协作基准", "接力推理"]
 type: "paper"
-domain: "NLP"
+subjects: ["Artificial Intelligence", "Computation and Language", "Multiagent Systems"]
 authors: ["Tim R. Davidson", "Adam Fourney", "Saleema Amershi", "Robert West", "Eric Horvitz", "Ece Kamar"]
 affiliations: ["EPFL", "Microsoft Research"]
 year: 2025
@@ -13,15 +12,14 @@ language: "en"
 citation: |
   @misc{davidson2025collaborationgap,
     title={The Collaboration Gap}, 
-    author={Tim R. Davidson and Adam Fourney and Saleema Amershi and Robert West and Eric Horvitz and Ece Kamar},
+    author={Tim R. Davidson and Adam Fourney and Saleema Amershi and Robert West and   Eric Horvitz and Ece Kamar},
     year={2025},
     eprint={2511.02687},
     archivePrefix={arXiv},
     primaryClass={cs.AI},
-    url={https://arxiv.org/abs/2511.02687}, 
+    url={https://arxiv.org/abs/2511.02687},
   }
 
-# 自定义状态与评分（可选）
 importance: 4
 difficulty: 3
 recommend: 3
@@ -112,5 +110,3 @@ recommend: 3
 - MCP
 - A2A
 - ACP
-
-

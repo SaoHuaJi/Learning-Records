@@ -4,7 +4,7 @@ name: ""                                    # 论文 / 报告名称
 uri: ""                                     # 原文链接 / DOI / 本地路径
 tags: ["domain", "method", "task", ...]     # 关键词标签
 type: "paper | report | blog ..."           # 文章类型
-domain: ""                                  # 学科领域，比如: ML, CV, NLP, HCI, Systems...
+subjects: ["", ...]                         # 学科领域，比如: ML, CV, NLP, HCI, Systems...
 authors: ["", ...]                          # 作者列表（可选）
 affiliations: ["", ...]                     # 单位（可选）
 year: 2000                                  # 发表年份
@@ -26,9 +26,9 @@ recommend: 3    # 1-5 推荐再读评分
 
 > 用自己的话对文章内容进行简要总结（参考如下）
 >
-> - 问题是什么？  
-> - 文章做了什么？  
-> - 结果大概怎样？  
+> - 问题是什么？
+> - 文章做了什么？
+> - 结果大概怎样？
 > - 对你个人有什么启发？
 
 ### 1.2 内容简介 Description
