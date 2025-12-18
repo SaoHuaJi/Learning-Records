@@ -61,12 +61,27 @@ LLM 本身已经学习了推理模式，只是默认不会显式展开。CoT 通
 
 - **实现方法：**
 Zero-shot CoT 使用两次提示来提取推理和答案。
+
 第一次提示引导模型生成推理步骤。
-Request messages: [{role: user, content: [输入问题]}, {role: assistant, content: [思维链推理触发句]}]
+
+```text
+Request messages: [
+    {role: user, content: [输入问题]}, 
+    {role: assistant, content: [思维链推理触发句]}
+]
 Response content: [推理步骤]
+```
+
 第二次提示提取最终答案。
-Request messages: [{role: user, content: [推理步骤]}, {role: assistant, content: [思维链推理触发句]+[推理步骤]+[答案提取触发句]}]
+
+```text
+Request messages: [
+  {role: user, content: [推理步骤]},
+  {role: assistant, content: [思维链推理触发句]+[推理步骤]+[答案提取触发句]}
+]
 Response content: [最终答案]
+```
+
 ![Steps](Resources/Zero-shot%20CoT%20-%20Steps.png)
 实际情况中第一步产生的推理步骤往往就能包含答案，因此第二步提示有时可以省略。
 

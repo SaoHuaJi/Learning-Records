@@ -22,7 +22,7 @@ citation: |
 
 importance: 5
 difficulty: 4
-recommend: 4
+recommend: 5
 ---
 
 # Graph of Thoughts: Solving Elaborate Problems with Large Language Models
