@@ -1,7 +1,7 @@
 ---
 name: "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
 uri: "https://arxiv.org/abs/2201.11903"
-tags: ["NLP", "Prompting", "Prompt Engineering", "Reasoning", "Large Language Models"]
+tags: ["NLP", "提示工程", "少样本推理", "LLM"]
 type: "paper"
 subjects: ["Artificial Intelligence", "Computation and Language"]
 authors: ["Jason Wei", "Xuezhi Wang", "Dale Schuurmans", "Maarten Bosma", "Brian Ichter", "Fei Xia", "Ed H. Chi", "Quoc V. Le", "Denny Zhou"]

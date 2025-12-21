@@ -1,7 +1,7 @@
 ---
 name: "The Collaboration Gap"
 uri: "https://arxiv.org/abs/2511.02687"
-tags: ["AI协作", "多智能体", "大型语言模型", "协作基准", "接力推理"]
+tags: ["AI协作", "多智能体", "LLM", "协作基准", "接力推理"]
 type: "paper"
 subjects: ["Artificial Intelligence", "Computation and Language", "Multiagent Systems"]
 authors: ["Tim R. Davidson", "Adam Fourney", "Saleema Amershi", "Robert West", "Eric Horvitz", "Ece Kamar"]

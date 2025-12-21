@@ -1,7 +1,7 @@
 ---
 name: "Large Language Models are Zero-Shot Reasoners"
 uri: "https://arxiv.org/abs/2205.11916"
-tags: ["LLM", "Chain-of-Thought", "Prompt Engineering", "Zero-shot Reasoning"]
+tags: ["LLM", "思维链", "提示工程", "零样本推理"]
 type: "paper"
 subjects: ["Artificial Intelligence", "Computation and Language"]
 authors: ["Takeshi Kojima", "Shixiang Shane Gu", "Machel Reid", "Yutaka Matsuo", "Yusuke Iwasawa"]

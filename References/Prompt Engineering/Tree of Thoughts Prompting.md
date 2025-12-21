@@ -1,7 +1,7 @@
 ---
 name: "Tree of Thoughts: Deliberate Problem Solving with Large Language Models"
 uri: "https://arxiv.org/abs/2305.10601"
-tags: ["Tree-of-thoughts", "LLM", "Heuristic Search", "Reasoning", "Planning"]
+tags: ["思维树", "LLM", "启发式搜索", "提示工程", "推理规划"]
 type: "paper"
 subjects: ["Computation and Language", "Artificial Intelligence", "Machine Learning"]
 authors: ["Shunyu Yao", "Dian Yu", "Jeffrey Zhao", "Izhak Shafran", "Thomas L. Griffiths", "Yuan Cao", "Karthik Narasimhan"]

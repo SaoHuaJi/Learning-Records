@@ -1,7 +1,7 @@
 ---
 name: "Self-Consistency Improves Chain of Thought Reasoning in Language Models"
 uri: "https://arxiv.org/abs/2203.11171"
-tags: ["LLM", "Chain-of-Thought", "Self-Consistency", "Reasoning", "Decoding"]
+tags: ["LLM", "思维链", "自洽思维链", "少样本推理", "多数投票"]
 type: "paper"
 subjects: ["Machine Learning", "Natural Language Processing"]
 authors: ["Xuezhi Wang", "Jason Wei", "Dale Schuurmans", "Quoc V. Le", "Ed H. Chi", "Sharan Narang", "Aakanksha Chowdhery", "Denny Zhou"]
@@ -28,15 +28,15 @@ recommend: 3
 
 ### 1.1 个人预览 Personal Preview
 
-> 文章主要关注在已经使用思维链（CoT）提示的前提下，是否还能在不改变模型、不引入额外训练数据的情况下，进一步提升复杂推理任务的准确率。作者指出，常见的 greedy decoding 只生成一条推理路径，容易受到偶然错误的影响，会带来局部最优、路径偏差等问题，导致推理链质量不稳定。为此，论文提出 Self-Consistency 方法：对同一问题采样多条不同的推理链，并对最终答案进行聚合，从而选出最一致的答案。实验表明，该方法在算术、常识和符号推理任务上都能显著提升性能。
+> 文章主要关注在已经使用思维链（Chain-of-Thought prompting, CoT）提示的前提下，是否还能在不改变模型、不引入额外训练数据的情况下，进一步提升复杂推理任务的准确率。作者指出，常见的 greedy decoding 只生成一条推理路径，容易受到偶然错误的影响，会带来局部最优、路径偏差等问题，导致推理链质量不稳定。为此，论文提出 Self-Consistency 方法：对同一问题采样多条不同的推理链，并对最终答案进行聚合，从而选出最一致的答案。实验表明，该方法在算术、常识和符号推理任务上都能显著提升性能。
 
 ### 1.2 内容简介 Description
 
 - **研究背景 Research Background：**  
-  Chain-of-Thought prompting 已被证明可以显著提升 LLM 在多步推理任务上的表现，但默认使用的 greedy decoding 往往导致推理路径不稳定。论文认为：复杂推理问题通常存在多种正确的思考路径，如果能从模型中采样到多条路径并进行聚合，就可能比只取一条路径更稳健。
+CoT 已被证明可以显著提升 LLM 在多步推理任务上的表现，但默认使用的 greedy decoding 往往导致推理路径不稳定。论文认为：复杂推理问题通常存在多种正确的思考路径，如果能从模型中采样到多条路径并进行聚合，就可能比只取一条路径更稳健。
 
 - **研究目标 Research Objectives：**  
-  探索一种无需额外监督、无需验证器的推理阶段方法，以进一步提升 CoT 的推理准确率，同时验证该方法在不同模型规模与不同任务（算术、常识、符号）上的普适性与鲁棒性。
+探索一种无需额外监督、无需验证器的推理阶段方法，以进一步提升 CoT 的推理准确率，同时验证该方法在不同模型规模与不同任务（算术、常识、符号）上的普适性与鲁棒性。
 
 - **主要贡献 Main Contributions：**  
   1. 提出 Self-Consistency 解码策略，用采样与聚合替代 CoT 的 greedy decoding。  
@@ -66,9 +66,13 @@ flowchart TD
 ```
 
 &emsp;&emsp;(1) 采样阶段：按照 CoT 编写少样本示例提示词以激活 LLM 的思维链推理，然后可以用 temperature sampling、top-k、nucleus sampling 等方法从同一个 prompt 生成多条推理链。
-&emsp;&emsp;(2) 聚合阶段：把每条推理链的最终答案解析出来，然后多数投票（unweighted sum / majority vote）选出最一致答案。论文也讨论了加权聚合（按生成概率加权、再做长度归一化），但发现多数投票与 “归一化加权求和” 表现非常接近。这是因为对答案集中的每个推理链-答案对而言，其归一化的条件概率```P(CoT_i, answer_i | prompt, question)```非常接近，即 LLM 认为这些生成结果“可能性相似”。此外，条件概率不归一化或是对每个答案加权平均都会导致性能的下降。
+&emsp;&emsp;(2) 聚合阶段：把每条推理链的最终答案解析出来，然后多数投票（unweighted sum / majority vote）选出最一致答案。论文也讨论了加权聚合（按生成概率加权、再做长度归一化），但发现多数投票与 “归一化加权求和” 表现非常接近。这是因为对答案集中的每个推理链-答案对而言，其归一化的条件概率 `P(CoT_i, answer_i | prompt, question)` 非常接近，即 LLM 认为这些生成结果“可能性相似”。此外，条件概率不归一化或是对每个答案加权平均都会导致性能的下降。
 聚合策略性能排序如下：
+
+```text
 无权求和 ≈ 归一化加权求和 > 无归一化加权求和 > 无归一化加权平均 > 归一化加权平均
+```
+
 需要注意的是，自洽 CoT 不是训练多个模型的 ensemble，而是单模型的 self-ensemble（通过多次采样实现）。
 
 ### 2.2 实验设置与结果 Experimental Settings & Results

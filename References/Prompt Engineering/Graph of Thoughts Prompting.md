@@ -1,7 +1,7 @@
 ---
 name: "Graph of Thoughts: Solving Elaborate Problems with Large Language Models"
 uri: "https://arxiv.org/abs/2308.09687"
-tags: ["LLM", "Prompt Engineering", "Graph of Thoughts", "Graph Structure Reasoning"]
+tags: ["LLM", "提示工程", "思维图", "推理规划"]
 type: "paper"
 subjects: ["Artificial Intelligence", "Computation and Language"]
 authors: ["Maciej Besta", "Nils Blach", "Ales Kubicek", "Robert Gerstenberger", "Michal Podstawski", "Lukas Gianinazzi", "Joanna Gajda", "Tomasz Lehmann", "Hubert Niewiadomski", "Piotr Nyczyk", "Torsten Hoefler"]

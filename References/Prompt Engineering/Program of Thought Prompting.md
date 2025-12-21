@@ -1,7 +1,7 @@
 ---
 name: "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks"
 uri: "https://arxiv.org/abs/2211.12588"
-tags: ["Program of Thoughts", "Chain of Thought", "Prompt Engineering", "Numerical Reasoning", "Arithmetic Reasoning", "Prompt Learning"]
+tags: ["程序化思维", "思维链", "提示工程", "LLM", "数值推理"]
 type: "paper"
 subjects: ["Artificial Intelligence", "Computation and Language"]
 authors: ["Wenhu Chen", "Xueguang Ma", "Xinyi Wang", "William W. Cohen"]

@@ -1,7 +1,7 @@
 ---
 name: "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models"
 uri: "https://arxiv.org/abs/2205.10625"
-tags: ["Prompt Engineering", "Chain-of-Thought", "Prompting strategy", "Complex reasoning", "LLM"]
+tags: ["提示工程", "思维链", "任务分解", "复杂推理", "LLM"]
 type: "paper"
 subjects: ["Artificial Intelligence", "Natural Language Processing"]
 authors: ["Denny Zhou", "Nathanael Schärli", "Le Hou", "Jason Wei", "Nathan Scales", "Xuezhi Wang", "Dale Schuurmans", "Claire Cui", "Olivier Bousquet", "Quoc Le", "Ed Chi"]
@@ -33,7 +33,7 @@ recommend: 2
 ### 1.2 内容简介 Description
 
 - **研究背景 Research Background：**
-大型预训练语言模型结合少样本提示已经在各种推理任务上取得了显著进展，其中尤以 CoT 的效果最为瞩目。CoT 提示通过要求模型给出逐步推理过程，大幅提高了数学计算、常识问答等任务的准确性。然而，现有提示范式往往假设模型在测试时遇到的问题与提示示例的难度相当。当模型面对远超提示示例复杂度的问题时，其表现会急剧恶化。这种从易题到难题的泛化能力不足成为制约 LLM 推理能力的一大瓶颈。
+LLM 结合少样本提示已经在各种推理任务上取得了显著进展，其中尤以 CoT 的效果最为瞩目。CoT 提示通过要求模型给出逐步推理过程，大幅提高了数学计算、常识问答等任务的准确性。然而，现有提示范式往往假设模型在测试时遇到的问题与提示示例的难度相当。当模型面对远超提示示例复杂度的问题时，其表现会急剧恶化。这种从易题到难题的泛化能力不足成为制约 LLM 推理能力的一大瓶颈。
 - **研究目标 Research Objectives：**
 文章旨在克服上述 “由易到难” 泛化难题，探索如何让 LLM 通过适当的提示在不经额外训练的情况下解决超出示例复杂度的新问题。作者希望设计一种系统性的提示策略，引导模型将复杂任务拆解为更小的子任务并逐一解决，从而提升模型在组合推理、逐步计算等方面的表现。这一目标在实验上通过选择符号操作、组合命令解释、数学应用题等具有代表性的任务来验证，观察新的提示方法能否显著优于传统提示策略。
 - **主要贡献 Main Contributions：**
