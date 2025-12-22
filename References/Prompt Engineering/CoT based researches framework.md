@@ -10,13 +10,13 @@ graph TD
         C --> G[ToT]
         G --> H[GoT]
         C --> I[Step-Aware Verifier]
+        I --> J[Self-Verification]
     end
     subgraph Zero-shot CoT
         A --> B[Zero-shot CoT]
         B --> E[PS]
         B --> F[PoT]
         C --> F
-        I --> J[Self-Verification]
     end
     subgraph Auto CoT
         C --> K[Auto CoT]
