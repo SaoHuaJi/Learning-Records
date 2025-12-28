@@ -39,12 +39,12 @@ graph TD
 | Auto CoT | 自动思维链 | <https://arxiv.org/abs/2210.03493> | 在 CoT-SC 的基础上，先通过 Zero-shot CoT 生成一批样例，再从中筛选质量较高的用于构建 Few-shot 提示  |
 | Self-Asking |  | <https://aclanthology.org/2024.findings-emnlp.879/> |  |
 | Self-Refine |  | <https://arxiv.org/abs/2303.17651> |  |
-| Reflexion |  | <https://arxiv.org/abs/2210.03629> |  |
+| Reflexion |  | <https://arxiv.org/abs/2303.11366> |  |
 | ReAct |  | <https://arxiv.org/abs/2210.03629> |  |
 | Meta Prompt |  | <https://arxiv.org/abs/2311.11482> |  |
 | PAL |  | <https://arxiv.org/abs/2211.10435> |  |
 | GraphPrompt |  | <https://arxiv.org/abs/2302.08043> |  |
-| Multimodal CoT |  | <https://arxiv.org/abs/2302.08043> |  |
+| Multimodal CoT |  | <https://arxiv.org/abs/2302.00923> |  |
 | Directional Stimulus Prompt |  | <https://arxiv.org/abs/2302.11520> |  |
 | Active Prompt |  | <https://arxiv.org/abs/2302.12246> |  |
 | APE |  | <https://arxiv.org/abs/2211.01910> |  |
